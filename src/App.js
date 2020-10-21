@@ -9,6 +9,7 @@ function App() {
   const started = useSelector(isStarted);
   return (
     <div className="App">
+      <h1>Game of colors</h1>
       {!started ? <GameSetup /> : <span>Game</span>}
     </div>
   );
