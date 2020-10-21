@@ -6,6 +6,7 @@ export const gameSetupSlice = createSlice({
     rows: 5,
     columns: 12,
     colors: 5,
+    isStarted: false,
   },
   reducers: {
     incrementRows: state => {
@@ -26,6 +27,12 @@ export const gameSetupSlice = createSlice({
     decrementColors: state => {
       if (state.colors > 0) state.colors -= 1;
     },
+    startGame: state => {
+      state.isStarted = true;
+    },
+    endGame: state => {
+      state.isStarted = false;
+    },
   },
 });
 
@@ -36,10 +43,12 @@ export const {
   decrementColumns,
   incrementColors,
   decrementColors,
+  startGame,
 } = gameSetupSlice.actions;
 
 export const rowsCount = state => state.gameSetup.rows;
 export const columnsCount = state => state.gameSetup.columns;
 export const colorsCount = state => state.gameSetup.colors;
+export const isStarted = state => state.gameSetup.isStarted;
 
 export default gameSetupSlice.reducer;

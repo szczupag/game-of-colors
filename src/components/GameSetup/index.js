@@ -7,6 +7,7 @@ import {
   decrementColumns,
   incrementColors,
   decrementColors,
+  startGame,
   rowsCount,
   columnsCount,
   colorsCount,
@@ -36,6 +37,7 @@ const GameSetup = () => {
         <span>colors: {colors}</span>
         <button onClick={() => dispatch(incrementColors())}>+</button>
       </div>
+      <button onClick={() => dispatch(startGame())}>Start!</button>
     </div>
   )
 };
