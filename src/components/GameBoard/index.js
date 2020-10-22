@@ -20,7 +20,7 @@ const GameBoard = () => {
   const colors = useSelector(colorsCount);
   const userScore = useSelector(score);
   const dispatch = useDispatch();
-  const [array, setArray] = useState([[]]);
+  const [array, setArray] = useState([]);
   const [colorsArray, setColorsArray] = useState([]);
   
   const updateUserScore = (sc) => dispatch(updateScore(sc));
@@ -33,6 +33,7 @@ const GameBoard = () => {
 
   const {
     onTileClick,
+    isEnd,
   } = useGameBoard({ array, setArray, updateUserScore, colors });
 
   return (

@@ -3,8 +3,11 @@ import { createSlice } from '@reduxjs/toolkit';
 export const gameSetupSlice = createSlice({
   name: 'gameSetup',
   initialState: {
-    rows: 5,
-    columns: 12,
+    // rows: 5,
+    // columns: 12,
+    // colors: 5,
+    rows: 3,
+    columns: 3,
     colors: 5,
     isStarted: true,
   },
