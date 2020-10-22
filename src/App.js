@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import GameSetup from './components/GameSetup';
 import {
   isStarted,
-} from './components/GameSetup/gameSetupSlice';
+} from './slices/gameSetupSlice';
 import s from './App.module.css';
 import GameBoard from './components/GameBoard';
 

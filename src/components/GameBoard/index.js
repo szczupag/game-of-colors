@@ -5,7 +5,8 @@ import {
   updateScore,
   tileArray,
   score,
-} from './gameBoardSlice';
+} from '../../slices/gameBoardSlice';
+
 
 const GameBoard = () => {
   const array = useSelector(tileArray);

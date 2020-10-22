@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import gameSetupReducer from '../components/GameSetup/gameSetupSlice';
-import gameBoardReducer from '../components/GameBoard/gameBoardSlice';
+import gameSetupReducer from '../slices/gameSetupSlice';
+import gameBoardReducer from '../slices/gameBoardSlice';
 
 export default configureStore({
   reducer: {

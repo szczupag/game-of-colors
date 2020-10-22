@@ -12,7 +12,7 @@ import {
   rowsCount,
   columnsCount,
   colorsCount,
-} from './gameSetupSlice';
+} from '../../slices/gameSetupSlice';
 import s from './styles.module.css';
 
 const GameSetup = () => {
