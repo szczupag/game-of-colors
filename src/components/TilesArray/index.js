@@ -1,6 +1,5 @@
 import React from 'react';
 import Tile from '../Tile';
-import rainbow from '../../helpers/rainbow';
 import s from './TilesArray.module.css';
 
 const TilesArray = ({
@@ -18,7 +17,7 @@ const TilesArray = ({
             <Tile
               key={colId}
               onTileClick={() => onTileClick(rowId, colId)}
-              color={rainbow(colors, tile)}
+              color={colors[tile]}
             />
           ))}
         </div>

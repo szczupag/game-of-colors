@@ -21,24 +21,26 @@ const GameBoard = () => {
   const userScore = useSelector(score);
   const dispatch = useDispatch();
   const [array, setArray] = useState([[]]);
+  const [colorsArray, setColorsArray] = useState([]);
   
   const updateUserScore = (sc) => dispatch(updateScore(sc));
   
   useEffect(() => {
-    const initArray = initGameBoard({ rows, columns, colors });
-    setArray(initArray);
+    const { tilesArray, colorsArray } = initGameBoard({ rows, columns, colors });
+    setArray(tilesArray);
+    setColorsArray(colorsArray);
   }, []);
 
   const {
     onTileClick,
-  } = useGameBoard({ array, setArray, updateUserScore, colors });
+  } = useGameBoard({ array, setArray, updateUserScore, colorsArray });
 
   return (
     <div>
       <p>Score: {userScore}</p>
       <TilesArray
         array={array}
-        colors={colors}
+        colors={colorsArray}
         onTileClick={onTileClick}
       />
     </div>
