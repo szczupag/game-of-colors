@@ -13,7 +13,7 @@ import {
   columnsCount,
   colorsCount,
 } from '../../slices/gameSetupSlice';
-import s from './styles.module.css';
+import s from './GameSetup.module.css';
 
 const GameSetup = () => {
   const rows = useSelector(rowsCount);
