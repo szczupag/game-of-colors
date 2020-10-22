@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import useGameBoard from '../../hooks/useGameBoard';
+import initGameBoard from '../../helpers/initGameBoard';
 import {
   setTileArray,
   updateScore,
-  tileArray,
   score,
 } from '../../slices/gameBoardSlice';
+import {
+  rowsCount,
+  columnsCount,
+  colorsCount,
+} from '../../slices/gameSetupSlice';
 
 
 const GameBoard = () => {
-  const array = useSelector(tileArray);
+  const rows = useSelector(rowsCount);
+  const columns = useSelector(columnsCount);
+  const colors = useSelector(colorsCount);
   const userScore = useSelector(score);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  
+  const updateUserScore = (sc) => dispatch(updateScore(sc));
+  const initArray = initGameBoard({ rows, columns, colors });
+
+  const {
+    tileArray,
+    onTileClick,
+  } = useGameBoard({ initArray, updateUserScore });
 
   return (
     <div>
