@@ -1,5 +1,7 @@
 const useGameBoard = ({}) => {
-  const onTileClick = () => {};
+  const onTileClick = (row, col) => {
+    console.log(`Tile: ${row} - ${col} clicked!`);
+  };
   return {
     onTileClick,
   }
