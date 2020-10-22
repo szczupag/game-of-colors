@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import SetupRow from '../SetupRow';
+import SetupRow from '../GameSetupRow';
 import {
   incrementRows,
   decrementRows,
@@ -13,6 +13,7 @@ import {
   columnsCount,
   colorsCount,
 } from './gameSetupSlice';
+import s from './styles.module.css';
 
 const GameSetup = () => {
   const rows = useSelector(rowsCount);
@@ -21,26 +22,33 @@ const GameSetup = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <SetupRow
-        label="Rows"
-        value={rows}
-        onDecrement={() => dispatch(decrementRows())}
-        onIncrement={() => dispatch(incrementRows())}
-      />
-      <SetupRow
-        label="Columns"
-        value={columns}
-        onDecrement={() => dispatch(decrementColumns())}
-        onIncrement={() => dispatch(incrementColumns())}
-      />
-      <SetupRow
-        label="Colors"
-        value={colors}
-        onDecrement={() => dispatch(decrementColors())}
-        onIncrement={() => dispatch(incrementColors())}
-      />
-      <button onClick={() => dispatch(startGame())}>Start!</button>
+    <div className={s.root}>
+      <div className={s.innerWrapper}>
+        <SetupRow
+          label="Rows"
+          value={rows}
+          onDecrement={() => dispatch(decrementRows())}
+          onIncrement={() => dispatch(incrementRows())}
+        />
+        <SetupRow
+          label="Columns"
+          value={columns}
+          onDecrement={() => dispatch(decrementColumns())}
+          onIncrement={() => dispatch(incrementColumns())}
+        />
+        <SetupRow
+          label="Colors"
+          value={colors}
+          onDecrement={() => dispatch(decrementColors())}
+          onIncrement={() => dispatch(incrementColors())}
+        />
+        <button
+          onClick={() => dispatch(startGame())}
+          className={s.submit}
+        >
+          Start
+        </button>
+      </div>
     </div>
   )
 };

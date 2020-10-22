@@ -1,4 +1,10 @@
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Concert One', cursive;
+  color: #fff;
+  background-color: #0e3940;
+}
+
+* {
+  box-sizing: border-box;
 }
