@@ -5,7 +5,7 @@ import s from './TilesArray.module.css';
 
 const TilesArray = ({
   array = [],
-  colorsCount,
+  colors,
   onTileClick,
 }) => (
     <div>
@@ -18,7 +18,7 @@ const TilesArray = ({
             <Tile
               key={colId}
               onTileClick={() => onTileClick(rowId, colId)}
-              color={rainbow(colorsCount, tile)}
+              color={rainbow(colors, tile)}
             />
           ))}
         </div>

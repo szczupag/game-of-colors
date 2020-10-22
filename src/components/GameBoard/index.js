@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import useGameBoard from '../../hooks/useGameBoard';
 import initGameBoard from '../../helpers/initGameBoard';
 import {
-  setTileArray,
   updateScore,
-  tileArray,
   score,
 } from '../../slices/gameBoardSlice';
 import {
@@ -21,27 +19,26 @@ const GameBoard = () => {
   const columns = useSelector(columnsCount);
   const colors = useSelector(colorsCount);
   const userScore = useSelector(score);
-  const array = useSelector(tileArray);
   const dispatch = useDispatch();
+  const [array, setArray] = useState([[]]);
   
   const updateUserScore = (sc) => dispatch(updateScore(sc));
-  const updateArray = (arr) => dispatch(setTileArray(arr));
-
-  const initArray = initGameBoard({ rows, columns, colors });
+  
   useEffect(() => {
-    updateArray(initArray);
+    const initArray = initGameBoard({ rows, columns, colors });
+    setArray(initArray);
   }, []);
 
   const {
     onTileClick,
-  } = useGameBoard({ array, updateArray, updateUserScore });
+  } = useGameBoard({ array, setArray, updateUserScore, colors });
 
   return (
     <div>
       <p>Score: {userScore}</p>
       <TilesArray
         array={array}
-        colorsCount={colors}
+        colors={colors}
         onTileClick={onTileClick}
       />
     </div>

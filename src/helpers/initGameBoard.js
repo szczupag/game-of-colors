@@ -4,9 +4,7 @@ const initGameBoard = ({
   colors,
 }) => {
   const initRow = () => Array.from({length: columns}, () => Math.floor(Math.random() * colors));
-  const initArray = () => {
-    return Array.from({ length: rows }, initRow);
-  };
+  const initArray = () => Array.from({ length: rows }, initRow);
 
   return initArray();
 };
