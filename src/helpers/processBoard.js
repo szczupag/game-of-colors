@@ -1,5 +1,6 @@
 import updateBoardColors from './updateBoardColors';
-import createVisitedArray from './visitedArray';
+import createVisitedArray from './createVisitedArray';
+import hasNeighbour from './hasNeighbour';
 
 const visitAllNeighbours = (tiles, visited, updated, row, col, color, score, colors) => {
   const maxRow = tiles.length - 1;
@@ -26,10 +27,18 @@ const checkTile = (tiles, visited, updated, row, col, color, score, colors) => {
 };
 
 const processBoard = (row, col, array, colors) => {
+  if (!hasNeighbour(array, row, col)) {
+    return {
+      score: 0,
+      updated: array,
+    }
+  }
+
   const tileArray = array.map(arr => arr.slice());
   const visitedArray = createVisitedArray(array.length, array[0].length);
   const updated = array.map(arr => arr.slice());
   const score = checkTile(tileArray, visitedArray, updated, row, col, tileArray[row][col], 0, colors);
+
   return {
     score: score > 1 ? score : 0,
     updated,
