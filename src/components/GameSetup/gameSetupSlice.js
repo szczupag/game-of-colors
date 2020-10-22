@@ -13,19 +13,19 @@ export const gameSetupSlice = createSlice({
       state.rows += 1;
     },
     decrementRows: state => {
-      if (state.rows > 0) state.rows -= 1;
+      if (state.rows > 1) state.rows -= 1;
     },
     incrementColumns: state => {
       state.columns += 1;
     },
     decrementColumns: state => {
-      if (state.columns > 0) state.columns -= 1;
+      if (state.columns > 1) state.columns -= 1;
     },
     incrementColors: state => {
       state.colors += 1;
     },
     decrementColors: state => {
-      if (state.colors > 0) state.colors -= 1;
+      if (state.colors > 1) state.colors -= 1;
     },
     startGame: state => {
       state.isStarted = true;
