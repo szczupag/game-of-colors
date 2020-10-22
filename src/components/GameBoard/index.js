@@ -33,7 +33,7 @@ const GameBoard = () => {
 
   const {
     onTileClick,
-  } = useGameBoard({ array, setArray, updateUserScore, colorsArray });
+  } = useGameBoard({ array, setArray, updateUserScore, colors });
 
   return (
     <div>

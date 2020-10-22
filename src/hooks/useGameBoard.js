@@ -1,13 +1,18 @@
-import processBoard from '../helpers/processGameBoard';
+import getScore from '../helpers/processBoard';
 
 const useGameBoard = ({
   array,
+  colors,
   setArray,
   updateUserScore,
 }) => {
   const onTileClick = (row, col) => {
-    const score = processBoard(row, col, array);
+    const {
+      score,
+      updated,
+    } = getScore(row, col, array, colors);
     updateUserScore(score);
+    setArray(updated);
   };
 
   return {
