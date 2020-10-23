@@ -14,6 +14,7 @@ import {
   colorsCount,
 } from '../../slices/gameSetupSlice';
 import s from './GameSetup.module.css';
+import Button from '../Button';
 
 const GameSetup = () => {
   const rows = useSelector(rowsCount);
@@ -42,12 +43,10 @@ const GameSetup = () => {
           onDecrement={() => dispatch(decrementColors())}
           onIncrement={() => dispatch(incrementColors())}
         />
-        <button
+        <Button
           onClick={() => dispatch(startGame())}
-          className={s.submit}
-        >
-          Start
-        </button>
+          label="Start"
+        />
       </div>
     </div>
   )

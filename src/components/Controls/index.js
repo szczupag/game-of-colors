@@ -1,21 +1,20 @@
 import React from 'react';
+import Button from '../Button';
 import s from './Controls.module.css';
 
 const Controls = ({
   score,
-  onBackButtonClick
+  onButtonClick
 }) => (
     <div className={s.gameControls}>
       <div className={s.scoreWrapper}>
         <span>Score:</span>
         <span className={s.score}>{score}</span>
       </div>
-      <div
-        onClick={onBackButtonClick}
-        className={s.buttonWrapper}
-      >
-        <span>Back to home</span>
-      </div>
+      <Button
+        onClick={onButtonClick}
+        label='Back to home'
+      />
     </div>
   );
 

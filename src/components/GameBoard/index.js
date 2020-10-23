@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import useGameBoard from '../../hooks/useGameBoard';
 import initGameBoard from '../../helpers/initGameBoard';
+import TilesArray from '../TilesArray';
+import Controls from '../Controls';
+import GameOverModal from '../GameOverModal';
 import {
   updateScore,
   setGameOver,
@@ -15,8 +18,6 @@ import {
   colorsCount,
   resetSetup,
 } from '../../slices/gameSetupSlice';
-import TilesArray from '../TilesArray';
-import Controls from '../Controls';
 
 
 const GameBoard = () => {
@@ -52,14 +53,17 @@ const GameBoard = () => {
     <div>
       <Controls
         score={userScore}
-        onBackButtonClick={backButtonClickHandler}
+        onButtonClick={backButtonClickHandler}
       />
       <TilesArray
         array={array}
         colors={colorsArray}
         onTileClick={onTileClick}
       />
-      {gameOverStatus && <span>game over!</span>}
+      <GameOverModal
+        visible={gameOverStatus}
+        onButtonClick={backButtonClickHandler}
+      />
     </div>
   );
 };

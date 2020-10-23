@@ -16,18 +16,3 @@
   flex-direction: column;
   align-items: center;
 }
-
-.submit {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background-color: #f96869;
-  box-shadow: 0 0 0 6px #f96869cf;
-  border-radius: 50px;
-  color: #fff;
-  font-size: 0.5em;
-  padding: 8px 24px;
-  margin-top: 16px;
-  font-family: inherit;
-  font-size: 1em;
-}
