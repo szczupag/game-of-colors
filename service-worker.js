@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/game-of-colors/precache-manifest.3ca0127bfaa5c754488ae4129060cf4a.js"
+  "/game-of-colors/precache-manifest.2572ecd544a8cdfccdbe7d1e8c99fe67.js"
 );
 
 self.addEventListener('message', (event) => {
