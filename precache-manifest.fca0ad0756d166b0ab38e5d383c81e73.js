@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3fa24ad5616333902b17c60c91a332c2",
+    "revision": "0fb03642552113a16adb7f4308a78054",
     "url": "/game-of-colors/index.html"
   },
   {
-    "revision": "483a61be91214a55ce79",
-    "url": "/game-of-colors/static/css/main.28baa1be.chunk.css"
+    "revision": "310b96cb808f52ca9f05",
+    "url": "/game-of-colors/static/css/main.81497a32.chunk.css"
   },
   {
     "revision": "85a8f8544d5d8075e1b1",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/game-of-colors/static/js/2.2724401b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "483a61be91214a55ce79",
-    "url": "/game-of-colors/static/js/main.3b55e8e1.chunk.js"
+    "revision": "310b96cb808f52ca9f05",
+    "url": "/game-of-colors/static/js/main.f484f9bb.chunk.js"
   },
   {
     "revision": "bda9171e4cda0e4a2b61",
