@@ -4,6 +4,7 @@ import useGameBoard from '../../hooks/useGameBoard';
 import initGameBoard from '../../helpers/initGameBoard';
 import {
   updateScore,
+  clearScore,
   score,
 } from '../../slices/gameBoardSlice';
 import {
@@ -26,7 +27,10 @@ const GameBoard = () => {
   const [colorsArray, setColorsArray] = useState([]);
 
   const updateUserScore = (sc) => dispatch(updateScore(sc));
-  const backButtonClickHandler = () => dispatch(endGame());
+  const backButtonClickHandler = () => {
+    dispatch(endGame());
+    dispatch(clearScore());
+  }
 
   useEffect(() => {
     const { tilesArray, colorsArray } = initGameBoard({ rows, columns, colors });

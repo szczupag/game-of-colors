@@ -9,11 +9,15 @@ export const gameBoardSlice = createSlice({
     updateScore: (state, action) => {
       state.score += action.payload;
     },
+    clearScore: state => {
+      state.score = 0;
+    }
   },
 });
 
 export const {
   updateScore,
+  clearScore,
 } = gameBoardSlice.actions;
 
 export const score = state => state.gameBoard.score;
