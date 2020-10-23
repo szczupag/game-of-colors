@@ -1,30 +1,35 @@
 import updateBoardColors from './updateBoardColors';
 import createVisitedArray from './createVisitedArray';
 import hasNeighbour from './hasNeighbour';
+import { current } from '@reduxjs/toolkit';
 
-const visitAllNeighbours = (tiles, visited, updated, row, col, color, score, colors) => {
-  const maxRow = tiles.length - 1;
-  const maxCol = tiles[0].length - 1;
-  let newScore = score;
-  if (row > 0) newScore = checkTile(tiles, visited, updated, row - 1, col, color, newScore, colors);
-  if (row < maxRow) newScore = checkTile(tiles, visited, updated, row + 1, col, color, newScore, colors);
-  if (col > 0) newScore = checkTile(tiles, visited, updated, row, col - 1, color, newScore, colors);
-  if (col < maxCol) newScore = checkTile(tiles, visited, updated, row, col + 1, color, newScore, colors);
-  return newScore;
+const visitAllNeighbours = (gameState, currentTile) => {
+  const { array } = gameState;
+  const { row, col } = currentTile;
+  const maxRow = array.length - 1;
+  const maxCol = array[0].length - 1;
+  if (row > 0) gameState.score = checkTile(gameState, { row: row - 1, col });
+  if (row < maxRow) gameState.score = checkTile(gameState, { row: row + 1, col });
+  if (col > 0) gameState.score = checkTile(gameState, { row, col: col - 1 });
+  if (col < maxCol) gameState.score = checkTile(gameState, { row, col: col + 1 });
+  return gameState.score;
 };
 
-const checkTile = (tiles, visited, updated, row, col, color, score, colors) => {
-  if (!visited[row][col]) {
-    visited[row][col] = true;
-    const currentColor = tiles[row][col];
-    if (currentColor === color) {
-      const newScore = visitAllNeighbours(tiles, visited, updated, row, col, color, score + 1, colors);
-      updateBoardColors(tiles, updated, row, col, color, colors);
-      return newScore;
+const checkTile = (gameState, currentTile) => {
+  const { array, visitedArray, targetColor } = gameState;
+  const { row, col } = currentTile;
+  if (!visitedArray[row][col]) {
+    visitedArray[row][col] = true;
+    const currentColor = array[row][col];
+    if (currentColor === targetColor) {
+      gameState.score += 1;
+      gameState.score = visitAllNeighbours(gameState, currentTile);
+      updateBoardColors(gameState, currentTile);
     }
   }
-  return score;
+  return gameState.score;
 };
+
 
 const processBoard = (row, col, array, colors) => {
   if (!hasNeighbour(array, row, col)) {
@@ -33,15 +38,26 @@ const processBoard = (row, col, array, colors) => {
       updated: array,
     }
   }
-
-  const tileArray = array.map(arr => arr.slice());
   const visitedArray = createVisitedArray(array.length, array[0].length);
-  const updated = array.map(arr => arr.slice());
-  const score = checkTile(tileArray, visitedArray, updated, row, col, tileArray[row][col], 0, colors);
+  const updatedColorsArray = array.map(arr => arr.slice());
+  const gameState = {
+    array,
+    visitedArray,
+    updatedColorsArray,
+    colors,
+    score: 0,
+    targetColor: array[row][col],
+  };
+  const currentTile = {
+    row,
+    col,
+  };
+
+  const score = checkTile(gameState, currentTile);
 
   return {
     score: score > 1 ? score : 0,
-    updated,
+    updatedColorsArray,
   }
 };
 

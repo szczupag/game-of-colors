@@ -20,10 +20,10 @@ const useGameBoard = ({
   const onTileClick = (row, col) => {
     const {
       score,
-      updated,
+      updatedColorsArray,
     } = getScore(row, col, array, colors);
     updateUserScore(score);
-    setArray(updated);
+    setArray(updatedColorsArray);
   };
 
   return {
