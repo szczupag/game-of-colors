@@ -1,7 +1,6 @@
 import updateBoardColors from './updateBoardColors';
 import createVisitedArray from './createVisitedArray';
 import hasNeighbour from './hasNeighbour';
-import { current } from '@reduxjs/toolkit';
 
 const visitAllNeighbours = (gameState, currentTile) => {
   const { array } = gameState;
@@ -35,7 +34,7 @@ const processBoard = (row, col, array, colors) => {
   if (!hasNeighbour(array, row, col)) {
     return {
       score: 0,
-      updated: array,
+      updatedColorsArray: array,
     }
   }
   const visitedArray = createVisitedArray(array.length, array[0].length);

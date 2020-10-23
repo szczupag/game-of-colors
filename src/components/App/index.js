@@ -1,11 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import GameSetup from './components/GameSetup';
+import GameSetup from '../GameSetup';
 import {
   isStarted,
-} from './slices/gameSetupSlice';
+} from '../../slices/gameSetupSlice';
 import s from './App.module.css';
-import GameBoard from './components/GameBoard';
+import GameBoard from '../GameBoard';
 
 function App() {
   const started = useSelector(isStarted);
