@@ -18,6 +18,7 @@ import {
   colorsCount,
   resetSetup,
 } from '../../slices/gameSetupSlice';
+import s from './GameBoard.module.css';
 
 
 const GameBoard = () => {
@@ -50,7 +51,7 @@ const GameBoard = () => {
 
 
   return (
-    <div>
+    <div className={s.root}>
       <Controls
         score={userScore}
         onButtonClick={backButtonClickHandler}
