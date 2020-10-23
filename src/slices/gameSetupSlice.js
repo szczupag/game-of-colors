@@ -6,7 +6,7 @@ export const gameSetupSlice = createSlice({
     rows: 5,
     columns: 12,
     colors: 5,
-    isStarted: false,
+    isStarted: true,
   },
   reducers: {
     incrementRows: state => {
