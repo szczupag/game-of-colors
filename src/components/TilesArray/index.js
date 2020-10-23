@@ -7,7 +7,7 @@ const TilesArray = ({
   colors,
   onTileClick,
 }) => (
-    <div>
+    <div className={s.wrapper}>
       {array.map((row, rowId) => (
         <div
           key={rowId}

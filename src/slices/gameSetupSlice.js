@@ -1,13 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {
+  rows: 5,
+  columns: 12,
+  colors: 5,
+  isStarted: false,
+};
+
 export const gameSetupSlice = createSlice({
   name: 'gameSetup',
-  initialState: {
-    rows: 5,
-    columns: 12,
-    colors: 5,
-    isStarted: true,
-  },
+  initialState,
   reducers: {
     incrementRows: state => {
       state.rows += 1;
@@ -30,9 +32,7 @@ export const gameSetupSlice = createSlice({
     startGame: state => {
       state.isStarted = true;
     },
-    endGame: state => {
-      state.isStarted = false;
-    },
+    resetSetup: () => initialState,
   },
 });
 
@@ -44,7 +44,7 @@ export const {
   incrementColors,
   decrementColors,
   startGame,
-  endGame,
+  resetSetup,
 } = gameSetupSlice.actions;
 
 export const rowsCount = state => state.gameSetup.rows;

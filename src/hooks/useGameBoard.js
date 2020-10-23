@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react';
 import checkGameStatus from '../helpers/checkGameStatus';
 import getScore from '../helpers/processBoard';
+import { setGameOver } from '../slices/gameBoardSlice';
 
 const useGameBoard = ({
   array,
   colors,
   setArray,
   updateUserScore,
+  setGameOverStatus,
 }) => {
-  const [isEnd, setIsEnd] = useState(false);
-
   useEffect(() => {
     if (array.length > 0) {
-      const gameNotEnded = checkGameStatus(array); 
-      setIsEnd(!gameNotEnded);
+      const gameEnd = checkGameStatus(array); 
+      if (gameEnd) setGameOverStatus();
     }
   }, [array]);
 
@@ -28,7 +28,6 @@ const useGameBoard = ({
 
   return {
     onTileClick,
-    isEnd,
   }
 };
 
