@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/game-of-colors/static/css/main.81497a32.chunk.css",
-    "main.js": "/game-of-colors/static/js/main.f484f9bb.chunk.js",
-    "main.js.map": "/game-of-colors/static/js/main.f484f9bb.chunk.js.map",
+    "main.css": "/game-of-colors/static/css/main.d2a3f958.chunk.css",
+    "main.js": "/game-of-colors/static/js/main.89ef0c16.chunk.js",
+    "main.js.map": "/game-of-colors/static/js/main.89ef0c16.chunk.js.map",
     "runtime-main.js": "/game-of-colors/static/js/runtime-main.d75b980b.js",
     "runtime-main.js.map": "/game-of-colors/static/js/runtime-main.d75b980b.js.map",
-    "static/js/2.2724401b.chunk.js": "/game-of-colors/static/js/2.2724401b.chunk.js",
-    "static/js/2.2724401b.chunk.js.map": "/game-of-colors/static/js/2.2724401b.chunk.js.map",
+    "static/js/2.68e5e2f9.chunk.js": "/game-of-colors/static/js/2.68e5e2f9.chunk.js",
+    "static/js/2.68e5e2f9.chunk.js.map": "/game-of-colors/static/js/2.68e5e2f9.chunk.js.map",
     "index.html": "/game-of-colors/index.html",
-    "precache-manifest.fca0ad0756d166b0ab38e5d383c81e73.js": "/game-of-colors/precache-manifest.fca0ad0756d166b0ab38e5d383c81e73.js",
+    "precache-manifest.3ca0127bfaa5c754488ae4129060cf4a.js": "/game-of-colors/precache-manifest.3ca0127bfaa5c754488ae4129060cf4a.js",
     "service-worker.js": "/game-of-colors/service-worker.js",
-    "static/css/main.81497a32.chunk.css.map": "/game-of-colors/static/css/main.81497a32.chunk.css.map",
-    "static/js/2.2724401b.chunk.js.LICENSE.txt": "/game-of-colors/static/js/2.2724401b.chunk.js.LICENSE.txt"
+    "static/css/main.d2a3f958.chunk.css.map": "/game-of-colors/static/css/main.d2a3f958.chunk.css.map",
+    "static/js/2.68e5e2f9.chunk.js.LICENSE.txt": "/game-of-colors/static/js/2.68e5e2f9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d75b980b.js",
-    "static/js/2.2724401b.chunk.js",
-    "static/css/main.81497a32.chunk.css",
-    "static/js/main.f484f9bb.chunk.js"
+    "static/js/2.68e5e2f9.chunk.js",
+    "static/css/main.d2a3f958.chunk.css",
+    "static/js/main.89ef0c16.chunk.js"
   ]
 }
