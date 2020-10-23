@@ -44,6 +44,7 @@ export const {
   incrementColors,
   decrementColors,
   startGame,
+  endGame,
 } = gameSetupSlice.actions;
 
 export const rowsCount = state => state.gameSetup.rows;

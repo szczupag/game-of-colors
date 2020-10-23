@@ -10,8 +10,10 @@ import {
   rowsCount,
   columnsCount,
   colorsCount,
+  endGame,
 } from '../../slices/gameSetupSlice';
 import TilesArray from '../TilesArray';
+import Controls from '../Controls';
 
 
 const GameBoard = () => {
@@ -22,9 +24,10 @@ const GameBoard = () => {
   const dispatch = useDispatch();
   const [array, setArray] = useState([]);
   const [colorsArray, setColorsArray] = useState([]);
-  
+
   const updateUserScore = (sc) => dispatch(updateScore(sc));
-  
+  const backButtonClickHandler = () => dispatch(endGame());
+
   useEffect(() => {
     const { tilesArray, colorsArray } = initGameBoard({ rows, columns, colors });
     setArray(tilesArray);
@@ -36,9 +39,13 @@ const GameBoard = () => {
     isEnd,
   } = useGameBoard({ array, setArray, updateUserScore, colors });
 
+
   return (
     <div>
-      <p>Score: {userScore}</p>
+      <Controls
+        score={userScore}
+        onBackButtonClick={backButtonClickHandler}
+      />
       <TilesArray
         array={array}
         colors={colorsArray}
